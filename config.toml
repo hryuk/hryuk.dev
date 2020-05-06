@@ -1,0 +1,24 @@
+baseURL = "https://hryuk.dev"
+languageCode = "en-us"
+title = "Hryuk"
+copyright = ""
+theme = "npq-hugo"
+pygmentsUseClasses=true
+
+[params]
+  author = "Hryuk"
+  description = ""
+  keywords = "hryuk blog react angular frontend golang"
+  useAvatar = true
+  microBlogSection = "content/posts"
+  displayMicroBlog = false
+  displayRecent = true
+  recentMax = 100
+  mail = "edusvh@gmail.com"
+
+[menu]
+  [[menu.main]]
+    name = "github"
+    pre = "<i class=\"fab fa-github fa-ms\"></i>"
+    url = "https://github.com/hzeroo"
+    weight = -6 
