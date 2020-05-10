@@ -20,5 +20,5 @@ pygmentsUseClasses=true
   [[menu.main]]
     name = "github"
     pre = "<i class=\"fab fa-github fa-ms\"></i>"
-    url = "https://github.com/hzeroo"
+    url = "https://github.com/hryuk"
     weight = -6 
