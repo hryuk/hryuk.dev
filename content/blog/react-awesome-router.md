@@ -1,7 +1,7 @@
 ---
 title: "react-awesome-router - A lightweight middleware-based React router alternative"
 date: 2020-05-05T00:15:36+02:00
-draft: true
+draft: false
 tags: ["react","router"]
 ---
 
@@ -101,13 +101,13 @@ One thing i like a lot about Angular Router is the ability to define custom midd
 With ```react-awesome-router``` you can define guards. Guards are executed after route resolution and before component render, allowing to conditionally render the component based on custom rules like authentication or user role:
 
 ```tsx
-const authGuard = {
-  middleware: router => {
-    const authenticated = !!router.context?.auth?.logued;
-    return authenticated;
-  },
-
-  fallback: <Unauthorized />
+const authGuard = (router, next) => {
+  const authenticated = !!router.context?.auth?.logued;
+  if (authenticated) {
+    return next();
+  } else {
+    return <Unauthorized />;
+  }
 };
 
 export const routes = [
@@ -125,7 +125,7 @@ export const routes = [
 
 With guards, you can, for example, change or extend the routing logic of a single route without having to create a new component, just a guard. Also, since middlewares are functions, they are easy to understand, simple to test and trivially composable.
 
-For further explanation, feature requests and issue reporting and examples:
-[react-awesome-router on Github](https://github.com/hzeroo/react-awesome-router)
+For further explanation, feature requests, issue reporting and examples:
+[react-awesome-router on Github](https://github.com/hryuk/react-awesome-router)
 
 That's all, thanks for reading!
